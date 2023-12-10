@@ -2,15 +2,18 @@
     "env": {
         "browser": true,
         "commonjs": true,
-        "es2021": true,
-        "node": true
+        "es2021": true
     },
-    "extends": [
-        "eslint:recommended",
-        "airbnb"
-    ],
+    "extends": "airbnb-base",
     "parserOptions": {
         "ecmaVersion": "latest"
     },
-    "rules": {}
+    "rules": {
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "indent": "off",
+        "no-underscore-dangle": "off"
+    }
 }

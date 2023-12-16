@@ -2,27 +2,42 @@ const routes = (handler) => [
     {
         method: 'POST',
         path: '/notes',
-        handler: handler.postNoteHandler,
+        handler: (request, h) => handler.postNoteHandler(request, h),
+        options: {
+            auth: 'notesapp_jwt',
+        },
     },
     {
         method: 'GET',
         path: '/notes',
-        handler: handler.getNotesHandler,
+        handler: () => handler.getNotesHandler(),
+        options: {
+            auth: 'notesapp_jwt',
+        },
     },
     {
         method: 'GET',
         path: '/notes/{id}',
-        handler: handler.getNoteByIdHandler,
+        handler: (request) => handler.getNoteByIdHandler(request),
+        options: {
+            auth: 'notesapp_jwt',
+        },
     },
     {
         method: 'PUT',
         path: '/notes/{id}',
-        handler: handler.putNoteByIdHandler,
+        handler: (request) => handler.putNoteByIdHandler(request),
+        options: {
+            auth: 'notesapp_jwt',
+        },
     },
     {
         method: 'DELETE',
         path: '/notes/{id}',
-        handler: handler.deleteNoteByIdHandler,
+        handler: (request) => handler.deleteNoteByIdHandler(request),
+        options: {
+            auth: 'notesapp_jwt',
+        },
     },
 ];
 
